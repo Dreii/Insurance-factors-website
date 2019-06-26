@@ -1,0 +1,233 @@
+#header{
+  position: absolute;
+  width: 100%;
+  background: none;
+  height: 64px;
+  z-index: 1000;
+  color: #003B5D;
+}
+
+.logo{
+  position: relative;
+  display: inline-block;
+  background-image: url("./img/insurance-factors-logo-dark.png");
+  background-size: contain;
+  min-width: 128px;
+  min-height: 64px;
+  background-repeat: no-repeat;
+  background-position: top left;
+  margin: 24px 0 0 24px;
+  z-index: 1;
+}
+
+#mobile-nav-button{
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  z-index: 1;
+  width: 64px;
+  height: 64px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #707070;
+  outline: none;
+}
+
+#mobile-nav-button:hover{
+  color: #333;
+}
+
+#nav{
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.6);
+  background-color: #003B5D;
+  padding: 16px 0;
+  top:0;
+  padding-top: 100px;
+  left: 100%;
+  transition: all 0.3s ease-out;
+  width: 100%;
+  height: 60vh;
+  z-index: 1;
+  color: white;
+}
+
+#nav.active{
+  left: 0;
+}
+
+#nav ul{padding:0;}
+#nav li{
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 8px;
+  margin: 24px 0;
+  font-size: 24px;
+}
+#nav li.active{
+  background: white;
+  color: #003B5D;
+}
+
+#nav li.active a{color: #003B5D;}
+#nav li a{color: white;}
+
+#nav li a{text-decoration: none; transition: all 0.3s ease-out;}
+
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.hamburger:hover {opacity: 0.7;}
+.hamburger.active:hover {opacity: 0.7;}
+.hamburger.active .hamburger-inner,
+.hamburger.active .hamburger-inner::before,
+.hamburger.active .hamburger-inner::after {background-color: white;}
+
+.hamburger-box {
+  width: 32px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 32px;
+  height: 4px;
+  background-color: #003B5D;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform, background-color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {top: -10px; }
+.hamburger-inner::after {bottom: -10px; }
+
+.hamburger--spin .hamburger-inner {
+  transition-duration: 0.22s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin .hamburger-inner::before {
+  transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+}
+
+.hamburger--spin .hamburger-inner::after {
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin.active .hamburger-inner {
+  transform: rotate(225deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--spin.active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+  transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+}
+
+.hamburger--spin.active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+
+
+
+
+
+@media only screen and (min-width: 900px){
+  .logo{
+    position: absolute;
+    background-image: url("./img/insurance-factors-logo-light.png");
+    min-width: 186px;
+    min-height: 64px;
+  }
+
+  #container.dark .logo{background-image: url("./img/insurance-factors-logo-dark.png");}
+
+  #mobile-nav-button{display: none;}
+
+  #nav{
+    position: absolute;
+    display: inline-block;
+    background: none;
+    padding: 0;
+    height: auto;
+    left: auto;
+    text-align: center;
+    z-index: 10000;
+    user-select: none;
+  }
+
+  #nav li{
+    display: inline-block;
+    margin: 0 16px;
+    padding: 0;
+    font-size: 16px;
+    transition: all 0.1s ease-out;
+    cursor: pointer;
+  }
+
+  #nav li:hover{color: #003B5D;}
+  #nav li.active{
+    background: none;
+    color: white;
+    border-bottom: 2px solid white;
+  }
+  #nav li.active a{color: white;}
+  #nav li a:visited{color: white;}
+
+  #nav li:hover a{color: #003B5D;}
+
+  #nav li.active:hover{border-color: #003B5D;}
+
+  #container.dark #nav li{color: #003B5D;}
+  #container.dark #nav li:hover{color: white;}
+  #container.dark #nav li.active{color: #003B5D; border-color: #003B5D;}
+  #container.dark #nav li a{color: #003B5D;}
+  #container.dark #nav li a:visited{color: #003B5D;}
+  #container.dark #nav li.active a{color: #003B5D;}
+  #container.dark #nav li:hover a{color: white;}
+  #container.dark #nav li.active:hover{border-color: white;}
+
+
+}

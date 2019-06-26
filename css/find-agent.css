@@ -1,0 +1,211 @@
+body.find-an-agent-modal-open{
+  overflow: hidden;
+}
+
+#find-agent-button{
+  position: fixed;
+  bottom: 32px;
+  right: 24px;
+
+  width: 176px;
+  height: 45px;
+
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+
+  cursor: pointer;
+
+  background-color: #00C6F2;
+  border: none;
+  border-radius: 32px;
+  padding: 16px 32px;
+  color: white;
+
+  font-size: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+
+  z-index: 1000000;
+
+  transition: all 0.6s ease-out;
+  outline: none;
+  animation: find-agent-slide-in 0.3s ease-out;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+#find-agent-button.hide{
+  transform: translateX(300px);
+}
+
+@keyframes find-agent-slide-in{
+  0%{
+    opacity: 0;
+    margin-right: -300px;
+  }
+  100%{
+    opacity: 1;
+    margin-right: 0px;
+  }
+}
+
+#find-agent-button span{
+  margin-right: 8px;
+}
+
+#find-agent-button:hover{
+  background: #3BD7FA;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px) scale(1.01);
+}
+
+#find-agent-button.open{
+  bottom:0;
+  right: 0;
+  border-radius: 0;
+  padding: 0;
+  background: #ECF9FC;
+}
+#find-agent-button.open:hover{
+  transform: translateY(0) scale(1);
+}
+
+#find-agent-button>span, #find-agent-button>p{display: inline; margin: 0;}
+#find-agent-button>span{margin-right: 16px;}
+#find-agent-button.open>span, #find-agent-button.open>p{display: none;}
+
+#find-agent-container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 32px 0;
+
+  bottom: 0;
+  right: 0;
+  background: #ECF9FC;
+  overflow: hidden;
+  transition: all 0.6s ease-out;
+  transform-origin: bottom right;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+#find-agent-container.open{
+  position: fixed;
+  padding: 64px;
+  background: #ECF9FC;
+  z-index: 100000000;
+  bottom: 0;
+  right: 0;
+
+  animation: find-agent-fade-in 0.6s ease-out;
+  animation-fill-mode: forwards;
+}
+
+#find-agent-close-button{
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  color: #007089;
+  font-size: 16px;
+  display: none;
+}
+
+#find-agent-close-button:hover{transform: scale(1.3);}
+#find-agent-container.open #find-agent-close-button{display: block;}
+
+#find-agent-header{
+  color: #707070;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+#find-agent-header h1{
+  font-family: 'Rufina', serif;
+  color: #007089;
+  font-size: 24px;
+  flex: 0 0 100%;
+  text-align: center;
+  font-size: 48px;
+  margin: 8px 0;
+}
+
+.find-agent-subheader-title{font-size: 18px; text-align: left; margin:0;}
+.find-agent-subheader-body{margin: 0 0 32px 0;}
+
+#find-agent-searchbar-container{flex: 0 0 100%;}
+#find-agent-searchbar-container .searchbar{
+  background: white;
+  border-radius: 32px;
+  padding: 8px 8px 8px 16px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  color: #007089;
+}
+#find-agent-searchbar-container .searchbar .searchbar-input{
+  border: none;
+  outline: none;
+}
+
+#find-agent-body{
+  margin-top: 32px;
+}
+
+#find-agent-table-container{
+  font-family: 'Lato', sans-serif;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: #6CA1B1;
+}
+
+#find-agent-table-container a.send-email{
+  background: #00C6F2;
+  padding: 4px 16px;
+  border-radius: 32px;
+  text-decoration: none;
+  color: white;
+  transition: background 0.3s ease-out;
+  white-space: nowrap;
+}
+#find-agent-table-container a.send-email:hover{background: #007089;}
+
+#find-agent-table-container table{width: 100%; border-spacing: 0; font-size: 16px; text-align: left;}
+#find-agent-table-container table.head{color: #9F9F9F; position: relative; background-color: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); z-index: 100;}
+#find-agent-table-container .body{overflow: scroll; max-height: 50vh;}
+#find-agent-table-container tr{height: 64px;}
+#find-agent-table-container .head>tbody>tr{background: none;}
+#find-agent-table-container tr:nth-child(odd){background-color: #EFFAFF}
+#find-agent-table-container th, #find-agent-table-container td{width: 33%; padding: 8px;}
+
+@keyframes find-agent-fade-in{
+  0%{
+    opacity: 0;
+    transform: scale(0);
+    background: #3BD7FA;
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+    background: #ECF9FC;
+  }
+}
+
+@media only screen and (max-width: 400px){#find-agent-table-container table{font-size: 10px}}
+@media only screen and (max-width: 300px){#find-agent-table-container table{font-size: 8px}}
+
+
+@media only screen and (min-width: 900px){
+  #find-agent-container{
+    padding: 64px 15%;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  #find-agent-header{padding: 0; text-align: left;}
+  #find-agent-searchbar-container{flex: auto;}
+  #find-agent-header h1{font-size: 24px; flex: auto; margin: 0; text-align: left;}
+  .find-agent-subheader{flex: auto;}
+  .find-agent-subheader-body{margin: 0;}
+}

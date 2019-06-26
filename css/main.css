@@ -7,16 +7,19 @@
  * Kroc Camen, and the H5BP dev community and team.
  */
 
- 
+
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
 
    html {
-    color: #222;
+    color: #707070;
     font-size: 1em;
     line-height: 1.4;
-}
+    font-family: 'Rufina', serif;
+    font-weight: lighter;
+    scroll-behavior: smooth;
+  }
 
 /*
  * Remove text-shadow in selection highlight:
@@ -192,7 +195,7 @@ textarea {
   clear: both;
 }
 
- 
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
@@ -210,7 +213,7 @@ textarea {
     /* Style adjustments for high resolution devices */
 }
 
- 
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
@@ -287,4 +290,38 @@ textarea {
     }
 }
 
+#container{
+  position: relative;
+  /* width: 100%; */
+  overflow-x: hidden;
+}
 
+div{
+  box-sizing: border-box;
+}
+
+#footer{
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  /* position: absolute; */
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 32px;
+  z-index: 10000;
+  background: #4C7184;
+  color: #6CA1B1;
+  font-size: 12px;
+  text-align: center;
+  padding: 8px;
+}
+
+div{animation: fade-in 3s ease-out;}
+.executive-bio, .executive-bio div{animation: none;}
+
+.async-image:before{filter: blur(3px);}
+
+@keyframes fade-in{
+  0%{opacity: 0;}
+  100%{opacity: 1}
+}
